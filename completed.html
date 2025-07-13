@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSL Behring MEA Registration</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: url('assets/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      min-height: 100vh;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+    body {
+      justify-content: flex-start;
+    }
+    .top-bar {
+      position: relative;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-top: 24px;
+      z-index: 2;
+    }
+    .logo-top-left {
+      position: static;
+      top: 0;
+      left: 0;
+      height: 12vw;
+      max-height: 140px;
+      min-height: 60px;
+      width: auto;
+      max-width: 180px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: none;
+      margin-bottom: 0;
+      margin-top: -30px;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    .logo-top-right {
+      position: relative;
+      height: 8vw;
+      max-height: 100px;
+      min-height: 40px;
+      width: auto;
+      max-width: 180px;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      transform: none;
+      margin-bottom: 0;
+    }
+    .logo-spacer {
+      height: 0;
+      width: 100%;
+    }
+    .center-content {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      height: auto;
+    }
+    .completed-animation {
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .checkmark {
+      width: 64px;
+      height: 64px;
+      color: #0097a9;
+      display: inline-block;
+      transform: scale(0.7);
+      opacity: 0;
+      animation: checkmarkPop 0.7s 0.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    }
+    .completed-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0097a9;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .completed-desc {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #333;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .footer {
+      width: 100vw;
+      background: #fff;
+      padding: 10px 0 6px 0;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #0097a9;
+      z-index: 10;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 400;
+      flex-wrap: wrap;
+      flex-direction: row;
+      flex-flow: row wrap;
+      margin-top: auto;
+      position: relative;
+      bottom: 0;
+    }
+    .footer span {
+      display: inline-block;
+      min-width: 180px;
+      margin: 0 10px;
+      white-space: nowrap;
+    }
+    .footer a {
+      color: #0097a9;
+      text-decoration: underline;
+      font-weight: 400;
+    }
+    @media (max-width: 900px) {
+      .top-bar {
+        max-width: 98vw;
+        padding: 12px 2vw 0 2vw;
+      }
+      .center-content {
+        max-width: 98vw;
+        margin: 20px auto 0 auto;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+      .logo-top-right {
+        width: 120px;
+      }
+    }
+    @media (max-width: 600px) {
+      .top-bar {
+        gap: 8px;
+        padding-top: 8px;
+      }
+      .logo-top-left {
+        height: 16vw;
+        max-height: 90px;
+        min-height: 40px;
+        max-width: 120px;
+        width: auto;
+        padding: 4px 8px 4px 8px;
+      }
+      .logo-top-right {
+        height: 12vw;
+        max-height: 60px;
+        min-height: 24px;
+        max-width: 90px;
+        width: auto;
+      }
+      .center-content {
+        width: auto;
+        max-width: 100%;
+        margin: 12px 24px 0;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        min-height: 40vh;
+      }
+      .register-header-block {
+        margin: 0 30px;
+      }
+      .footer {
+        width: 100%;
+        margin: 36px 0 0 0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 0.65rem;
+        padding: 6px 0 2px 0;
+        position: relative;
+        bottom: 0;
+      }
+      .footer span {
+        min-width: 0;
+        width: 100%;
+        margin: 2px 0;
+        text-align: center;
+        white-space: normal;
+        font-size: 0.7rem;
+      }
+    }
+    @keyframes checkmarkPop {
+      0% { transform: scale(0.7); opacity: 0; }
+      60% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <img src="assets/logo2.png" alt="CSL Behring Logo2" class="logo-top-left">
+    <img src="assets/logo.png" alt="Together For More Logo" class="logo-top-right">
+  </div>
+  <div class="logo-spacer"></div>
+  </div>
+  <div class="center-content">
+    <div class="completed-animation">
+      <svg class="checkmark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="32" fill="#fff"/>
+        <path d="M20 34l8 8 16-16" stroke="#0097a9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="completed-title">Thank You for Registering!</div>
+    <div class="completed-desc">
+      We’re excited to welcome you to the CSL Behring Middle East Africa Face-to-Face Meeting — because together, we can do <b>MORE</b>.<br><br>
+      Your registration has been successfully completed. We look forward to seeing you and sharing an inspiring and impactful experience together.<br><br>
+      Stay tuned for updates and further event details.
+    </div>
+  </div>
+  <div class="footer">
+    <span>Middle East & Africa website <br> <a href="https://www.cslbehring.ae">www.cslbehring.ae</a></span>
+    <span>Middle East & Africa Head Office <br> <a href="mailto:infoMEA@cslbehring.com">infoMEA@cslbehring.com</a></span>
+    <span>For medical enquiries <br> <a href="mailto:MEAMedicalinfo@cslbehring.com">MEAMedicalinfo@cslbehring.com</a></span>
+    <span>Adverse Drug Reactions (ADRs) <br> <a href="mailto:PHV-EGI@cslbehring.com">PHV-EGI@cslbehring.com</a></span>
+  </div>
+</body>
+</html> 
